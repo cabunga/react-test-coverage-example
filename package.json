@@ -6,7 +6,9 @@
   },
   "description": "Example of analyzing test coverage with React",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "eslint": "eslint index.js src/** test/unit**"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mrparkers/react-test-coverage-example.git"
