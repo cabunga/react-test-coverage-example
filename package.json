@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint index.js src/** test/unit**",
+    "start": "open http://localhost:8080/app && webpack-dev-server --hot --inline",
     "test": "mocha",
     "verify": "npm run eslint && npm test"
   },
