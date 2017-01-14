@@ -7,7 +7,7 @@
   "description": "Example of analyzing test coverage with React",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint index.js src/** test/unit**",
+    "eslint": "eslint index.js src/** test/**.js",
     "start": "open http://localhost:8080/app && webpack-dev-server --hot --inline",
     "test": "mocha",
     "verify": "npm run eslint && npm test"
