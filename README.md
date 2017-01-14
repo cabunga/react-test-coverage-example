@@ -1,0 +1,1 @@
+# react-test-coverage-example
