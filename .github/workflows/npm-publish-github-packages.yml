@@ -17,6 +17,20 @@ jobs:
         with:
           node-version: 16
       - run: npm i
-      - run: npm test
-
+      - run: |
+          npm test
+          npm run verify
+      - name: Create file ${{ inputs.tag }}
+        run: |
+          ls
+          echo "sonar.branch.name=main" >> sonar-project.properties
+          echo "sonar.organization=cabunga-github" >> sonar-project.properties
+          echo "sonar.projectKey=cabunga-github_node" >> sonar-project.properties
+          echo "sonar.sources=." >> sonar-project.properties  
+    
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}               
 
