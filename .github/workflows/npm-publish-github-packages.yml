@@ -27,6 +27,7 @@ jobs:
           echo "sonar.organization=cabunga-github" >> sonar-project.properties
           echo "sonar.projectKey=cabunga-github_node" >> sonar-project.properties
           echo "sonar.sources=." >> sonar-project.properties  
+          echo "sonar.javascript.lcov.reportPaths=./coverage/lcov.info" >> sonar-project.properties            
     
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@master
